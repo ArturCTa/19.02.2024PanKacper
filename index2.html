@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        .headaren{
+            height: calc(10vh - 35px);
+            width: 100vw;
+            padding-top: 35px;
+            display: flex;
+            text-align: center;
+            justify-content: space-around;
+            background-color: gray;
+        }
+        
+        .lewo{
+            display: flex;
+            float:left;
+            width: 10%;
+            height: 853px;
+            background-color: grey;
+        }
+        #srodek{
+            float: left;
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            height: 853px;
+            justify-content: space-between;
+            overflow: auto;
+        }
+        .prawo{
+            display: flex;
+            float: left;
+            width: 10%;
+            height: 853px;
+            background-color: grey;
+        }
+        .dol{
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="headaren">
+
+    <input type="number" id="ilosc" placeholder="Ilosć kwadratów">
+
+    <input type="number" id="szer" placeholder="Szerokosc">
+
+    <input type="number" id="wys" placeholder="Wysokosć">
+
+    <input type="number" id="r" placeholder="R">
+
+    <input type="number" id="g" placeholder="G">
+
+    <input type="number" id="b" placeholder="B">
+
+    <button id="button" onclick="generowanie()">Zatwierdz</button>
+    </div>
+
+<div class="dol">
+    <div class="lewo"></div>
+    <div id="srodek"></div>
+    <div class="prawo"></div>
+</div>
+    
+
+    <script>
+        function generowanie() {
+            document.getElementById("srodek").textContent = " ";
+            var ilosc = document.getElementById("ilosc").value;
+            var szer = document.getElementById("szer").value;
+            var wys = document.getElementById("wys").value;
+            var r = document.getElementById("r").value;
+            var g = document.getElementById("g").value;
+            var b = document.getElementById("b").value;
+        
+
+
+            for (var i = 0; i < ilosc; i++, r++, g++, b++) {
+            
+            var kwadrat = document.createElement('div');
+            kwadrat.style.width = szer + 'px';
+            kwadrat.style.height = wys + 'px';
+            kwadrat.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            kwadrat.textContent = i + 1;
+            srodek.appendChild(kwadrat);
+            }
+
+            if ( 'div' > 200) {
+                kwadrat.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            }
+
+        }
+
+    </script>
+</body>
+</html>
