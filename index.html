@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wys{
+            width: 40%;
+            height: 50%;
+            border: solid black 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="inp">
+    <input type="number" id="ilosc" placeholder="Do której liczby">
+    <input type="number" id="potega" placeholder="Do której potegi">
+    <button id="button" onclick="potegowanie()">Zatwierdz</button>
+    </div>
+    <div id="wynik">
+
+
+    </div>
+    
+
+    <script>
+        function potegowanie() {
+            var ilosc = document.getElementById("ilosc").value;
+            var potega = document.getElementById("potega").value;
+            
+            let tablica = new Array(ilosc)
+
+            for(let i = 0; i < ilosc; i++){
+                tablica[i]= Math.pow(potega,i);
+            }
+            console.log(tablica);
+            document.getElementById("wynik").textContent = tablica;
+        }
+
+
+    </script>
+</body>
+</html>
